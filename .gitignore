@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data files (raw/processed too large — keep only what the app needs)
+data/raw/*.csv
+data/raw/*.numbers
+data/processed/*.csv
+
+# Model artifacts & app data — tracked for deployment
+# artifacts/*.joblib  (needed by the app)
+# data/splits/*.csv   (needed by Model Performance tab)
+# reports/shap/*.csv  (needed by Feature Insights tab)
+
+# Reports — images only (not used by the app)
+reports/**/*.png
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Claude Code local config
+.claude/
+
+# Large data splits (only X_test/y_test needed by app)
+data/splits/X_train*.csv
+data/splits/y_train*.csv
+
+# Large report CSVs
+reports/shap/shap_values.csv
+reports/modelling/test_predictions.csv

@@ -1,0 +1,39 @@
+Feature,Mean_SHAP
+Tenure Months,0.5855776966377968
+Contract_Internet_Month-to-month_Fiber optic,0.5388027309369706
+Dependents,0.4322958880100428
+Contract_Two year,0.2684068655302867
+Payment Method_Electronic check,0.1905172392761988
+Monthly Charges,0.1387349988642019
+Paperless Billing,0.11115441875580429
+Online Security_Yes,0.08664245374487699
+Tech Support_Yes,0.07052984005010104
+Streaming TV_Yes,0.06349090474519477
+Streaming Movies_Yes,0.05949034516004564
+Contract_One year,0.05441396788441511
+Multiple Lines_Yes,0.05179681930204547
+Partner,0.04572240550925747
+Multiple Lines_No phone service,0.039438011027038096
+Internet Service_No,0.02852948146202553
+Online Backup_Yes,0.023338048857285142
+Contract_Internet_One year_No,0.02190130424756226
+Online Security_No internet service,0.019222619462589057
+Streaming Movies_No internet service,0.01898607493408498
+Tech Support_No internet service,0.017566448565072383
+Online Backup_No internet service,0.017373711607102847
+Streaming TV_No internet service,0.014500043145274914
+Device Protection_No internet service,0.013959465768766848
+Senior Citizen,0.0137591951106695
+Contract_Internet_One year_Fiber optic,0.008160681688937937
+Tenure Group,0.006550861040372513
+Num Addon Services,0.006226313902994288
+Internet Service_Fiber optic,0.0031711263622584657
+Contract_Internet_Month-to-month_No,0.0027221560911438025
+Contract_Internet_One year_DSL,0.0019848768744362187
+Payment Method_Mailed check,0.00188138294938014
+Payment Method_Credit card (automatic),0.0015552522274762655
+Device Protection_Yes,0.0007804506715101961
+Charges Tier,0.00032043160017796867
+Contract_Internet_Two year_No,1.8697780109747932e-05
+Contract_Internet_Two year_DSL,6.607659085855868e-06
+Contract_Internet_Two year_Fiber optic,0.0
