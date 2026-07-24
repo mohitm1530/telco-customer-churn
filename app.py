@@ -123,8 +123,24 @@ st.markdown("""
 
 @st.cache_resource
 def load_artifacts():
-    bundle = joblib.load(os.path.join(ARTIFACTS_DIR, 'best_churn_model.joblib'))
-    scaler = joblib.load(os.path.join(ARTIFACTS_DIR, 'scaler.joblib'))
+    import pickle, io, sklearn._loss
+
+    class _SklearnUnpickler(pickle.Unpickler):
+        def find_class(self, module, name):
+            if module == '_loss':
+                module = 'sklearn._loss'
+            return super().find_class(module, name)
+
+    def _safe_load(path):
+        with open(path, 'rb') as f:
+            try:
+                return joblib.load(f)
+            except ModuleNotFoundError:
+                f.seek(0)
+                return _SklearnUnpickler(f).load()
+
+    bundle = _safe_load(os.path.join(ARTIFACTS_DIR, 'best_churn_model.joblib'))
+    scaler = _safe_load(os.path.join(ARTIFACTS_DIR, 'scaler.joblib'))
     return bundle['model'], bundle['threshold'], bundle, scaler
 
 model, threshold, model_info, scaler = load_artifacts()
