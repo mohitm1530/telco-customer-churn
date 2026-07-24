@@ -4,7 +4,7 @@ An end-to-end machine learning project that predicts customer churn for a teleco
 
 ## Live Application
 
-**[Launch the Dashboard](https://mohitm1530-telco-customer-churn.streamlit.app)**
+**[Launch the Dashboard](https://telco-customer-churn-ganncqejcuuiur8xupwkfe.streamlit.app)**
 
 ---
 
