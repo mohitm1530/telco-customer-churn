@@ -121,29 +121,18 @@ st.markdown("""
 # LOAD ARTIFACTS
 # ============================================================================
 
-import sys
-try:
-    import sklearn._loss
-    sys.modules.setdefault('_loss', sklearn._loss)
-except ImportError:
-    pass
-try:
-    import sklearn._loss.loss
-    sys.modules.setdefault('_loss.loss', sklearn._loss.loss)
-except ImportError:
-    pass
-try:
-    import sklearn._loss.link
-    sys.modules.setdefault('_loss.link', sklearn._loss.link)
-except ImportError:
-    pass
-
-
 @st.cache_resource
 def load_artifacts():
     bundle = joblib.load(os.path.join(ARTIFACTS_DIR, 'best_churn_model.joblib'))
     scaler = joblib.load(os.path.join(ARTIFACTS_DIR, 'scaler.joblib'))
-    return bundle['model'], bundle['threshold'], bundle, scaler
+    model = bundle['model']
+    if not hasattr(model, '_loss'):
+        try:
+            from sklearn._loss.loss import HalfBinomialLoss
+        except ImportError:
+            from sklearn._loss import HalfBinomialLoss
+        model._loss = HalfBinomialLoss()
+    return model, bundle['threshold'], bundle, scaler
 
 model, threshold, model_info, scaler = load_artifacts()
 FEATURES = model_info['features']
